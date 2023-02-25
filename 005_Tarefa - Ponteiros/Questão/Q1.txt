@@ -1,0 +1,28 @@
+#include "iostream"
+#include "cstdlib"
+
+using namespace std;
+
+int main (){
+	
+	int x, y, w;
+	
+	cout<<"Digite um numero: ";
+	cin>>x;
+	
+	cout<<"Digite um outro numero: ";
+	cin>>y;
+	
+	cout<<"Digite mais um outro numero: ";
+	cin>>w;
+	
+	double Delta = (y*y) - (4*(x*w));
+	cout<<"Valor do Delta: "<<Delta <<endl;
+	
+	double Resposta1 = (-y+(Delta*Delta/Delta)/2*x);
+	double Resposta2 = (-y-(Delta*Delta/Delta)/2*x);
+	
+	cout<<"Resposta: "<< Resposta1 << endl;
+	cout<<"Resposta: "<< Resposta2;
+	return 0;
+}

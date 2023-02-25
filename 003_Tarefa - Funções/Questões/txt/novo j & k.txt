@@ -1,0 +1,60 @@
+#include "math.h"
+#include "iostream"
+
+
+using namespace std;
+
+double Saldo;
+double NovoSaldo;
+
+double const RealDolar = 5.16;
+double const DolarReal = 0.19;
+
+// Saldo Disponível para Dolar //
+double ExibirSaldo (){
+	double saldo = Saldo;
+		cout << "\nDigite seu Saldo: ";
+		cin >> Saldo;
+		cout <<"Saldo digitado: "<< Saldo << endl;
+	return Saldo;
+}
+
+int main(){
+	
+	
+	MENU:
+	system("cls");
+	
+	ExibirSaldo();	
+	cout << "\nCotacao do Real nos Estados Unidos [Dolar -> Real]: " << DolarReal;
+	cout << "\nCotacao do Dolar no Brasil [Real -> Dolar]: " << RealDolar << endl;
+	
+		int tecla;
+		cout << "\nTransferencia de Real para Dolar [1] Transferencia de Dolar para Real [2] Saida [3]: ";
+		cin >> tecla;
+		cout << "Sua escolha foi: " << tecla << endl;
+		
+		switch (tecla){
+			case 1: 
+				tecla = '1';
+				NovoSaldo = Saldo * RealDolar;
+				cout << "\nNovo Saldo: "<< NovoSaldo << endl;
+				exit(0);
+				break;
+				
+			case 2:
+				tecla = '2';
+				NovoSaldo = Saldo * DolarReal;
+				cout << "\nNovo Saldo: "<< NovoSaldo << endl;
+				exit(0);
+				break;
+			
+			case 3:
+				tecla = '3';
+				exit(0);
+				break;
+		}
+	goto MENU;
+	
+	return 0;
+}

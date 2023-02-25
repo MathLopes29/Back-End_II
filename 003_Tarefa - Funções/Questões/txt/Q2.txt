@@ -1,0 +1,91 @@
+/**
+ 
+"Fazer o quadro resumo de subrotinas e código fonte de programa para ler
+o comprimento e calcular o diâmetro, calcular o raio e finalmente a área de
+um círculo; (Faça um menu com as opções necessárias. Utilize a
+simulação 3 como referência/Modelo para fazer este trabalho. )"
+
+
+*[Área] Circulo = pi*R^2
+*[Diâmetro] Circulo = 2*R
+
+*/
+
+
+#include "math.h"
+#include "iostream"
+
+using namespace std;
+
+float Diametro;
+double const pi = 3.14;
+
+double VArea(){
+	double Area;
+	float Raio = Diametro/2;
+	Area = pi * (Raio*Raio);
+	return Area;
+}
+
+float VRaio(){
+	float Raio = Diametro/2;
+	return Raio; 
+}
+
+float VPerimetro(){
+	float Raio = Diametro/2;
+	float Perimetro = (2*pi)*Raio;
+	return Perimetro;
+}
+
+int main(){
+	
+	MENU:
+	system ("cls");
+
+	int tecla;
+	cout << "Perimetro [1] Area [2] Raio [3] Saida [4]:";
+ 	cin >> tecla;
+ 	cout << "Sua escolha foi: " << tecla << endl;
+	
+	switch(tecla){
+		case 1:
+			tecla = '1';
+			cout<<"\nDigite o Diametro do Circulo: ";
+			cin>>Diametro;
+			cout<<"Perimetro do Circulo: "<<VPerimetro()<<endl;
+			exit(0);
+			break;
+			
+		
+		case 2:
+			tecla = '2';
+			cout<<"\nDigite o Diametro do Circulo: ";
+			cin>>Diametro;
+			cout<<"Area do Circulo: "<<VArea()<<endl;
+			exit(0);
+			break;
+			
+		
+		case 3:
+			tecla = '3';
+			cout<<"\nDigite o Diametro do Circulo: ";
+			cin>>Diametro;
+			cout<<"Raio do Circulo: "<<VRaio()<<endl;
+			exit(0);
+			break;
+			
+		
+		case 4:
+			tecla = '4';
+			cout << "Saindo ... " << endl;
+			system("exit");
+			exit(0);
+			break;
+	}
+	goto MENU; 
+	
+	return 0;
+}
+
+

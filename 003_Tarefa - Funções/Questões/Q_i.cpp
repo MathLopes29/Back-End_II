@@ -1,0 +1,30 @@
+#include "math.h"
+#include "iostream"
+
+using namespace std;
+
+double A;
+double B;
+
+double Resultado (){
+	
+	cout << "\nDigite o valor de A: ";
+	cin >> A;
+	cout << "Valor Digitado: " << A << endl;
+	
+	cout << "\nDigite o valor de B: ";
+	cin >> B;
+	cout << "Valor Digitado: " << B << endl;
+	
+	double R;
+	R = ((A-B)*(A-B));
+	cout << "\nResultado do quadrado da diferenca: " << R << endl;
+	
+	return R;
+}
+
+int main (){
+	
+	Resultado();
+	return 0;
+}

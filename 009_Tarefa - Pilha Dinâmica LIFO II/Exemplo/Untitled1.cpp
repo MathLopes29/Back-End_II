@@ -1,0 +1,126 @@
+#include <iostream>
+
+using namespace std;
+
+struct pilha{
+ int num;
+ pilha *prox;
+};
+
+int main(){
+ pilha *topo = NULL;
+ pilha *aux;
+ 
+ int op;
+  do{
+    cout << "\n\n\tPILHA DESEMPLILHA COMO ESTRUTURA DINAMICA"
+                 "\n\tMENU DE ESCOLHA DA PILHA"
+                 "\n\t1 - INSERIR NA PILHA"
+                 "\n\t2 - CONSULTAR TODA PILHA"
+                 "\n\t3 - REMOVER DA PILHA"
+                 "\n\t4 - DESEMPILHAR A PILIHA"
+                 "\n\t5 - ESVAZIAR A PILHA" 
+                 "\n\t6 - SAIR"
+                 "\n\tESCOLHA: ";
+    cin >> op;
+
+
+   if(op == 1){
+     cout << "\n\tINSIRA NUMERO NA PILHA: ";
+     
+	 pilha *novo = new pilha();
+     
+	 cin >> novo->num;
+     novo->prox = topo;
+     topo = novo;
+     
+	 cout << "\n\tNUMERO "<<novo->num<<" INSERIDO COM SUCESSO!!!"<<endl;
+	 system("pause");
+	 system("cls");
+    }
+
+
+   if(op == 2){
+     if(topo == NULL)
+	 	cout << "\n\tPILHA VAZIA!!!"<<endl;
+     
+	 else{
+       cout << "\n\tPILHA COMPLETA: ";  
+	   aux = topo;
+       
+       while(aux != NULL){
+        cout << aux->num << " ";
+        aux = aux->prox;
+       }
+       
+       system("pause");
+	   system("cls"); 
+      }
+    }
+
+
+   if(op == 3){
+     if(topo == NULL)
+	 	cout << "\n\tPILHA VAZIA!!!";
+     
+	 else{
+       aux = topo;
+       cout << "\n\tNUMERO: " << topo->num << " REMOVIDO COM SUCESSO!!!"<<endl;
+       topo = topo->prox;
+       delete(aux);
+       
+       system("pause");
+	   system("cls"); 
+      }
+    }
+
+
+   if(op == 4){
+     if(topo == NULL)
+	 	cout << "\n\tPILHA VAZIA!!!";
+     
+	 else{
+       cout<<"\n\tTOPO: "<<topo->num <<endl;
+       aux = topo->prox;
+
+       while(aux != NULL){
+        aux = aux->prox;
+        topo->prox--;
+       }
+      }
+      system("pause");
+	  system("cls"); 
+    }
+    
+
+   if(op == 5){
+     if(topo == NULL)
+	 	cout << "\n\tPILHA VAZIA!!!"<<endl;
+     
+	 else{
+       aux = topo;
+       while(aux != NULL)
+       {
+       	
+        topo = topo->prox;
+        delete(aux);
+        aux = topo;
+       }
+       
+       cout << "\n\tPILHA ESVAZIADA COM SUCESSO!!!!"<<endl;
+      }
+    }
+
+
+   if(op<1 || op>6)
+   		cout << "\n\tOPCAO INVALIDA!!!"<<endl;
+   else
+   
+   if(op == 6)
+   		cout<<"\n\tGOOD BYE ...!!\n\n"<<endl;
+
+   }while(op != 6);
+   
+   
+ return 0;
+}

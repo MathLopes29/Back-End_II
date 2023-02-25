@@ -1,0 +1,34 @@
+# include "math.h"
+# include "iostream"
+
+using namespace std;
+
+double h;
+double c;
+double l;
+
+double LogicaVolume(){
+	
+	cout << "Digite o Comprimento da Caixa: ";
+	cin >> c;
+	cout << "Comprimento: " << c << endl;
+	
+	cout << "\nDigite a Largura da Caixa: ";
+	cin >> l;
+	cout << "Largura: : " << l << endl;
+	
+	cout << "\nDigite a Altura da Caixa: ";
+	cin >> h;
+	cout << "Comprimento: " << h << endl;
+
+	double Volume = c*l*h;
+	cout << "\nVolume da Caixa: " << Volume;
+
+return Volume;
+}
+
+int main(){
+	
+	LogicaVolume();
+	return 0;
+}
